@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Asher Snook III | Cloud Engineer</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+header {
+    background: #161b22;
+    padding: 12px 18px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #30363d;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 6px rgba(88,166,255,0.4));
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    margin-top: 60px;
+    scroll-margin-top: 90px;
+}
+
+.hero-container {
+    padding: 40px 20px;
+    border: 1px solid rgba(88,166,255,0.15);
+    border-radius: 12px;
+    background: radial-gradient(circle at top, rgba(88,166,255,0.08), transparent 60%), #0d1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.hero-logo { width: 140px; filter: drop-shadow(0 0 10px rgba(88,166,255,0.4)); }
+
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+.btn {
+    padding: 10px 16px;
+    background: #238636;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn.secondary {
+    background: #1f6feb;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #161b22;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.metric {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.metric h2 { margin: 0; color: #58a6ff; }
+
+.terminal {
+    background: #010409;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 15px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.line { white-space: pre-wrap; margin-bottom: 4px; }
+.prompt { color: #58a6ff; }
+
+.input-line {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #30363d;
+    padding-top: 8px;
+}
+
+#cmd {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #c9d1d9;
+    font-family: inherit;
+    font-size: 14px;
+    caret-color: #58a6ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="#top"><img src="as3_logo.png" class="header-logo"></a>
+<nav>
+<a href="#top">About</a>
+<a href="#metrics">Metrics</a>
+<a href="#projects">Projects</a>
+<a href="#terminal">Terminal</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+</nav>
+</header>
+
+<div class="container">
+
+<section class="hero-container">
+<img src="as3_logo.png" class="hero-logo"/>
+<h1>Asher Snook III</h1>
+<p>Cloud Engineer | AWS | DevOps | Automation</p>
+<div class="hero-buttons">
+<a class="btn secondary" href="https://www.linkedin.com/in/asher-snook-iii-33484483/" target="_blank">LinkedIn Profile</a>
+<a class="btn secondary" href="mailto:ashersnook3@gmail.com">Contact</a>
+</div>
+</section>
+
+<section id="metrics" class="section">
+<h2>Infrastructure Metrics</h2>
+<div class="metrics">
+<div class="metric"><h2 id="servers">0</h2><p>Production Servers</p></div>
+<div class="metric"><h2 id="deploys">0</h2><p>Deployments</p></div>
+<div class="metric"><h2 id="uptime">0</h2><p>Uptime %</p></div>
+</div>
+</section>
+
+<section id="projects" class="section">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card"><h3>CI/CD Pipeline</h3><p>Jenkins + Docker automated deployments.</p></div>
+<div class="card"><h3>AWS Monitoring Stack</h3><p>Nagios + Splunk observability platform.</p></div>
+<div class="card"><h3>Automation Toolkit</h3><p>Bash & Python infrastructure scripts.</p></div>
+</div>
+</section>
+
+<section id="terminal" class="section">
+<h2>Terminal</h2>
+<div class="terminal">
+<div class="output" id="output"></div>
+<div class="input-line">
+<span class="prompt">asher@cloud:~$</span>
+<input id="cmd" autocomplete="off" placeholder="type 'help'" />
+</div>
+</div>
+</section>
+
+<section id="skills" class="section">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">AWS / Azure / OCI</div>
+<div class="card">Linux / Windows / OSX</div>
+<div class="card">Docker / Kubernetes</div>
+<div class="card">Jenkins CI/CD</div>
+<div class="card">Python / Bash / PHP</div>
+<div class="card">Nagios / Splunk Monitoring</div>
+<div class="card">NGINX / Apache / Tomcat</div>
+<div class="card">Active Directory / IAM</div>
+</div>
+</section>
+
+<section id="experience" class="section">
+<h2>Experience</h2>
+<div class="grid">
+<div class="card">
+<h3>Ansira – Cloud Administrator</h3>
+<p>AWS infrastructure, IAM, Jira SME, monitoring systems, automation.</p>
+</div>
+<div class="card">
+<h3>Papa John’s – Senior Analyst</h3>
+<p>4,000+ locations, SQL systems, OS upgrades, support operations.</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<script>
+const output=document.getElementById('output');
+const cmd=document.getElementById('cmd');
+
+function print(t){
+let d=document.createElement('div');
+d.className='line';
+d.innerHTML=t;
+output.appendChild(d);
+output.scrollTop=output.scrollHeight;
+}
+
+function help(){
+print("help - commands");
+print("skills - view skills");
+print("experience - view experience");
+print("clear - clear terminal");
+print("aws status - system status");
+}
+
+function runCommand(c){
+if(!c) return;
+print(`<span class='prompt'>asher@cloud:~$</span> ${c}`);
+
+switch(c.trim().toLowerCase()){
+case 'help': help(); break;
+case 'clear': output.innerHTML=''; break;
+case 'skills': print('AWS, DevOps, Kubernetes, Python, Bash'); break;
+case 'experience': print('Ansira / Papa John\'s'); break;
+case 'aws status': print('All systems operational ✔'); break;
+default: print('command not found');
+}
+}
+
+cmd.addEventListener('keydown',e=>{
+if(e.key==='Enter'){
+runCommand(cmd.value);
+cmd.value='';
+}
+});
+
+function animate(id,target){
+let el=document.getElementById(id);
+let i=0;
+let t=setInterval(()=>{
+if(i>=target){el.innerText=target;clearInterval(t);}else{el.innerText=Math.floor(i);}i+=target/60;},20);
+}
+animate('servers',57);
+animate('deploys',124);
+animate('uptime',99);
+
+setTimeout(()=>print('System initialized ✔'),600);
+</script>
+
+</body>
+</html>
